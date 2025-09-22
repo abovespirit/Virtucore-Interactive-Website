@@ -1,0 +1,186 @@
+/* WR Arsenal Styles */
+.wr-arsenal {
+    padding: 6rem 0;
+    background-color: #0f0822;
+    position: relative;
+    overflow: hidden;
+}
+
+.wr-arsenal__inner-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.wr-arsenal__title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.wr-arsenal__title span {
+    position: relative;
+    z-index: 1;
+    color: #7e51ff;
+}
+
+.wr-arsenal__list {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-top: 3rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wr-arsenal__list__item {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.wr-arsenal__list__item__title {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.wr-arsenal__list__item__title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, #7e51ff 0%, #00f0ff 100%);
+}
+
+.wr-arsenal__list__item__list {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: #7e51ff rgba(126, 81, 255, 0.2);
+}
+
+/* Custom scrollbar for WebKit browsers */
+.wr-arsenal__list__item__list::-webkit-scrollbar {
+    height: 6px;
+}
+
+.wr-arsenal__list__item__list::-webkit-scrollbar-track {
+    background: rgba(126, 81, 255, 0.1);
+    border-radius: 10px;
+}
+
+.wr-arsenal__list__item__list::-webkit-scrollbar-thumb {
+    background-color: #7e51ff;
+    border-radius: 10px;
+}
+
+.wr-arsenal__list__item__list__item {
+    flex: 0 0 auto;
+    width: 180px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(126, 81, 255, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.wr-arsenal__list__item__list__item:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(126, 81, 255, 0.1) 0%, rgba(0, 240, 255, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.wr-arsenal__list__item__list__item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(126, 81, 255, 0.2);
+    border-color: rgba(126, 81, 255, 0.3);
+}
+
+.wr-arsenal__list__item__list__item:hover:before {
+    opacity: 1;
+}
+
+.wr-arsenal__list__item__list__inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.wr-arsenal__list__item__list__inner img {
+    max-width: 80%;
+    max-height: 60px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(2);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.wr-arsenal__list__item__list__item:hover .wr-arsenal__list__item__list__inner img {
+    filter: grayscale(0) brightness(1);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Responsive Styles */
+/* Remove the media queries for multi-column layout since we want vertical stacking */
+
+@media (max-width: 767px) {
+    .wr-arsenal {
+        padding: 3rem 0;
+    }
+    
+    .wr-arsenal__title {
+        font-size: 1.75rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .wr-arsenal__list {
+        gap: 3rem;
+    }
+    
+    .wr-arsenal__list__item__list {
+        gap: 1rem;
+        padding-bottom: 0.5rem;
+    }
+    
+    .wr-arsenal__list__item__list__item {
+        width: 140px;
+        height: 100px;
+    }
+}
